@@ -23,9 +23,6 @@
 
 
 <h1>Encompass Solar Solutions Web Application</h1>
-  <p align="left"><strong>This project is now retired after a year of development and maintenance. <br/>[Jan 2022 - Jan 2023]</strong <a href="https://www.linkedin.com/in/christopher-force-dev/">
-    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="20"/>
-  </a></p> 
 <p>Welcome to my repository for our Encompass Solar Solutions web application! This project showcases a highly interactive and visually appealing user interface designed for a solar and roof cleaning company. This project is actively maintained.</p>
 <h2>Key Features &amp; Accomplishments</h2>
 <ul>
