@@ -19,6 +19,7 @@ export default function ContractForm () {
       LASTNAME: '',
       EMAIL: '',
       PHONE: '',
+      ADDRESS: '',
       COMPANY: '',
       COMPANYPHONE: '',
       SALESPERSON: '',
@@ -52,17 +53,21 @@ export default function ContractForm () {
         Last: formValue.LASTNAME,
         Email: formValue.EMAIL,
         Phone: formValue.PHONE,
+        Address: formValue.ADDRESS,
         Company: formValue.COMPANY,
         CompanyPhone: formValue.COMPANYPHONE,
         Salesperson: formValue.SALESPERSON,
         Frequency: freqCheckbox
       });
-      fetch('https://script.google.com/macros/s/AKfycbzShg_scb9UKDq-yXrsVZnA5_kYXRo1JcyiatfmjMmn2_PtvELJozXLpae6ZHTe0WvZRg/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyFaEnT-d7dJHuPv3sSCTRiepBaZCtTtgjU2wY1hyFI65mNkBFyDVtuHOFTUKQH-obj/exec', {
             mode: 'no-cors',
             method: 'post',
             body: data
         })
-        .then(navigate('/thankyou'))
+        .then(() => {
+          window.location.href = 'https://encompasssolarsolutions.com';
+        })
+        // .then(navigate('/'))
         .then(() => {
           alert("Success!")
         })
@@ -83,7 +88,7 @@ export default function ContractForm () {
     return (
       <div className="bodygradient flex flex-col justify-center h-full mx-8 md:mx-16 pt-4 pb-8">
         <div className="flex flex-col justify-center lg:pt-4">
-          <h1 className="text-[#00c924] text-3xl font-bold text-center">Southeast Solar Solutions</h1><br />
+          <h1 className="text-[#00c924] text-3xl font-bold text-center">Encompass Solar Solutions</h1><br />
   
           <h2 className="text-xl text-center pb-2 text-orange-400">We offer professional solutions to keep your solar panels working at peak efficiency!</h2><br />
 
@@ -105,7 +110,7 @@ export default function ContractForm () {
             Like an oil change for your car, solar panels also need maintenance to keep performing at their highest potential. Dirty solar panels <strong className="text-orange-400">cost you money</strong> by compromising their ability to produce power.<br /><br />
 
             Our carbon fiber telescoping cleaning tools can effortlessly reach every panel on any solar array, guaranteeing you a complete and professional job.<br /><br /> <strong className="text-blue-400">Every time.</strong><br /><br />
-            We offer standalone (1-time you call, we clean) and 5 year annual and semiannual cleaning contracts.
+            We offer standalone (1-time you call, we clean), 2 year, and 5 year annual cleaning contracts.
             If you purchase your cleaning contract in a package with your solar system, <strong className="text-[#00c924]">you can enjoy the federal tax credit on the cost!</strong><br /><br /><br />
           </p>
         </div>
@@ -198,6 +203,12 @@ export default function ContractForm () {
             <input value={formValue.PHONE}
             onChange={handleChange} 
             type="number" id="number" name="PHONE" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+            {/* address */}
+            <label for="phone" className="leading-7 text-xs md:text-sm py-1">Homeowner's Address</label>
+            <input value={formValue.ADDRESS}
+            onChange={handleChange} 
+            type="text" id="address" name="ADDRESS" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+            {/* company */}
             <label for="company" className="leading-7 text-xs md:text-sm py-1">Referring Company</label>
             <input value={formValue.COMPANY}
             onChange={handleChange} 
@@ -217,9 +228,9 @@ export default function ContractForm () {
                 <input type="radio" name="radio-6" 
                 onChange={handleCheckbox}
                 class="checked:bg-green-500 " 
-                Value="Annual" 
+                Value="2-Year" 
                 required />
-                <span class="label-text ml-2">5-Year Annual Contract</span>
+                <span class="label-text ml-2">2-Year Annual Contract</span>
               </label>
             </div>
             <div class="form-control">
@@ -230,9 +241,9 @@ export default function ContractForm () {
                 onChange={handleCheckbox} 
                 name="radio-6" 
                 class="checked:bg-green-500 " 
-                value="Semi-Annual" 
+                value="5-Year" 
                 required />
-                <span class="label-text ml-2">5-Year Semi-Annual Contract</span>
+                <span class="label-text ml-2">5-Year Annual Contract</span>
               </label>
             </div>
 
@@ -244,3 +255,6 @@ export default function ContractForm () {
       </div>
     )
 }
+
+// homeowner's address
+// 
