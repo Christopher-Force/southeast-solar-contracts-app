@@ -1,4 +1,4 @@
-import logo from "../../assets/img/Logo dark.png"
+import logo from "../../assets/img/Logo dark.webp"
 
 export default function LandingNav () {
     return(

@@ -12,7 +12,7 @@ import '../../styles/borderanimation.css'
 
 export default function ContractForm () {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [formValue, setformValue] = useState({
       FIRSTNAME: '',
@@ -59,13 +59,13 @@ export default function ContractForm () {
         Salesperson: formValue.SALESPERSON,
         Frequency: freqCheckbox
       });
-      fetch('https://script.google.com/macros/s/AKfycbyFaEnT-d7dJHuPv3sSCTRiepBaZCtTtgjU2wY1hyFI65mNkBFyDVtuHOFTUKQH-obj/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbxobU3otSWT2tvlfPn99Rl1GwfiBNe056g35B1lUlZSe-9KXL8HjLuMKKcFtVyg-EV7iQ/exec', {
             mode: 'no-cors',
             method: 'post',
             body: data
         })
         .then(() => {
-          window.location.href = 'https://encompasssolarsolutions.com';
+          window.location.href = 'https://southeastsolarsolutions.com';
         })
         // .then(navigate('/'))
         .then(() => {
@@ -88,7 +88,7 @@ export default function ContractForm () {
     return (
       <div className="bodygradient flex flex-col justify-center h-full mx-8 md:mx-16 pt-4 pb-8">
         <div className="flex flex-col justify-center lg:pt-4">
-          <h1 className="text-[#00c924] text-3xl font-bold text-center">Encompass Solar Solutions</h1><br />
+          <h1 className="text-[#00c924] text-3xl font-bold text-center">Southeast Solar Solutions</h1><br />
   
           <h2 className="text-xl text-center pb-2 text-orange-400">We offer professional solutions to keep your solar panels working at peak efficiency!</h2><br />
 
@@ -228,9 +228,20 @@ export default function ContractForm () {
                 <input type="radio" name="radio-6" 
                 onChange={handleCheckbox}
                 class="checked:bg-green-500 " 
+                Value="1-Year" 
+                required />
+                <span class="label-text ml-2">Prepaid 1-Year Annual Contract</span>
+              </label>
+            </div>
+            <div class="form-control">
+              <label class="label cursor-pointer justify-start">
+                 
+                <input type="radio" name="radio-6" 
+                onChange={handleCheckbox}
+                class="checked:bg-green-500 " 
                 Value="2-Year" 
                 required />
-                <span class="label-text ml-2">2-Year Annual Contract</span>
+                <span class="label-text ml-2">Prepaid 2-Year Annual Contract</span>
               </label>
             </div>
             <div class="form-control">
@@ -243,9 +254,10 @@ export default function ContractForm () {
                 class="checked:bg-green-500 " 
                 value="5-Year" 
                 required />
-                <span class="label-text ml-2">5-Year Annual Contract</span>
+                <span class="label-text ml-2">Prepaid 5-Year Annual Contract</span>
               </label>
             </div>
+            
 
             <button 
             type="submit" className="btn hover:bg-[#8fe1ff] bg-slate-900 btn-active-secondary text-lg hover:text-black text-primary-focus bg white mt-2 mb-2">Submit</button>
