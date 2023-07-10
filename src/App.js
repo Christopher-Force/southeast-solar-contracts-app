@@ -18,7 +18,6 @@ const Wrapper = ({children}) => {
 } 
 
 function App() {
- if (window.location.host.split(".")[0] === "contract") {
     return (
       <Router>
         <div className="bg-black">
@@ -33,15 +32,7 @@ function App() {
         </div>
       </Router>
     );
-    } else {
-      return (
-        <Router>
-          <div className="bg-black">
-            
-          </div>
-        </Router>
-      );
-    }
+    
 }
 
 export default App;
