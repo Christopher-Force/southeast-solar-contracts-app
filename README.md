@@ -22,7 +22,7 @@
 
 
 
-<h1>Encompass Solar Solutions Web Application</h1>
+<h1>Southeast Solar Solutions Contracts Web Application</h1>
 <p>Welcome to my repository for our Encompass Solar Solutions web application! This project showcases a highly interactive and visually appealing user interface designed for a solar and roof cleaning company. This project is actively maintained.</p>
 <h2>Key Features &amp; Accomplishments</h2>
 <ul>
