@@ -53,7 +53,10 @@ export default function ContractForm () {
         Last: formValue.LASTNAME,
         Email: formValue.EMAIL,
         Phone: formValue.PHONE,
-        Address: formValue.ADDRESS,
+        AddressLine1: formValue.ADDRESS1,
+        AddressLine2: formValue.ADDRESS2,
+        Zip: formValue.ZIP,
+        State: formValue.STATE,
         Company: formValue.COMPANY,
         CompanyPhone: formValue.COMPANYPHONE,
         Salesperson: formValue.SALESPERSON,
@@ -179,49 +182,68 @@ export default function ContractForm () {
         </div>
         <br/>
         <div className="webdesigntuts-workshop flex flex-col justify-center lg:justify-self-start pt-2">
-          <form
+        <form
           onSubmit={submitContract}
           className=" flex flex-col justify-center text-green-400"
           id="sub-form">
             <span><h1 className="text-2xl text-center text-orange-400 pb-4">Take advantage of today’s discount prices for the next 5 years!</h1><br /></span>
-            <label for="names" className="leading-7 text-xs md:text-sm py-1">Homeowner's First Name</label>
+            {/* First Name */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's First Name</label>
             <input 
             value={formValue.FIRSTNAME}
             onChange={handleChange}
             type="text" id="first-name" name="FIRSTNAME" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            <label for="names" className="leading-7 text-xs md:text-sm py-1">Homeowner's Last Name</label>
+            {/* Last Name */}
+            <label  className="leading-7 text-xs md:text-sm py-1">Homeowner's Last Name</label>
             <input 
             value={formValue.LASTNAME}
             onChange={handleChange}
             type="text" id="last-name" name="LASTNAME" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            <label for="email" className="leading-7 text-xs md:text-sm py-1">Homeowner's Email</label>
+
+            {/* EMAIL */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's Email</label>
             <input
             value={formValue.EMAIL}
             onChange={handleChange}
             type="email" id="email" name="EMAIL" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            <label for="phone" className="leading-7 text-xs md:text-sm py-1">Homeowner's Phone</label>
+            {/* PHONE */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's Phone</label>
             <input value={formValue.PHONE}
             onChange={handleChange} 
             type="number" id="number" name="PHONE" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            {/* address */}
-            <label for="phone" className="leading-7 text-xs md:text-sm py-1">Homeowner's Address</label>
-            <input value={formValue.ADDRESS}
+            {/* ADDRESS LINE 1 */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's Address Line 1</label>
+            <input value={formValue.ADDRESS1}
             onChange={handleChange} 
-            type="text" id="address" name="ADDRESS" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+            type="text" id="address" name="ADDRESS1" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+            {/* ADDRESS LINE 2 */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's Address Line 2</label>
+            <input value={formValue.ADDRESS2}
+            onChange={handleChange} 
+            type="text" id="address" name="ADDRESS2" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+            {/* ZIP */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's Zip Code</label>
+            <input value={formValue.ZIP}
+            onChange={handleChange} 
+            type="text" id="zip" name="ZIP" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+            {/* STATE */}
+            <label className="leading-7 text-xs md:text-sm py-1">Homeowner's State</label>
+            <input value={formValue.STATE}
+            onChange={handleChange} 
+            type="text" id="state" name="STATE" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
             {/* company */}
-            <label for="company" className="leading-7 text-xs md:text-sm py-1">Referring Company</label>
+            <label className="leading-7 text-xs md:text-sm py-1">Referring Company</label>
             <input value={formValue.COMPANY}
             onChange={handleChange} 
             type="text" id="company" name="COMPANY" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            <label for="COMPANYPHONE" className="leading-7 text-xs md:text-sm py-1">Referring Company's Phone</label>
+            <label className="leading-7 text-xs md:text-sm py-1">Referring Company's Phone</label>
             <input value={formValue.COMPANYPHONE}
             onChange={handleChange} 
             type="text" id="company-phone" name="COMPANYPHONE" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            <label for="SALESPERSON" className="leading-7 text-xs md:text-sm py-1">Salesperson's Name</label>
+            <label className="leading-7 text-xs md:text-sm py-1">Salesperson's Name</label>
             <input value={formValue.SALESPERSON}
             onChange={handleChange} 
             type="text" id="salesperson" name="SALESPERSON" className="w-full bg-white bg-opacity-90 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black md:py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-            
             <div class="form-control">
               <label class="label cursor-pointer justify-start">
                  
@@ -257,7 +279,6 @@ export default function ContractForm () {
                 <span class="label-text ml-2">Prepaid 5-Year Annual Contract</span>
               </label>
             </div>
-            
 
             <button 
             type="submit" className="btn hover:bg-[#8fe1ff] bg-slate-900 btn-active-secondary text-lg hover:text-black text-primary-focus bg white mt-2 mb-2">Submit</button>
